@@ -2,10 +2,8 @@ import psycopg2
 import csv
 
 
-conn = psycopg2.connect(host='localhost', port='5433', database='north', user='ZhorikZeniuk', password='cucumber1l')
-
-
 def insert_values_in_table_customers():
+    conn = psycopg2.connect(host='localhost', port='5433', database='north', user='ZhorikZeniuk', password='cucumber1l')
     try:
         with conn:
             with conn.cursor() as cur:
@@ -24,6 +22,7 @@ def insert_values_in_table_customers():
 
 
 def insert_values_in_table_employees():
+    conn = psycopg2.connect(host='localhost', port='5433', database='north', user='ZhorikZeniuk', password='cucumber1l')
     try:
         with conn:
             with conn.cursor() as cur:
@@ -43,6 +42,7 @@ def insert_values_in_table_employees():
 
 
 def insert_values_in_table_orders():
+    conn = psycopg2.connect(host='localhost', port='5433', database='north', user='ZhorikZeniuk', password='cucumber1l')
     try:
         with conn:
             with conn.cursor() as cur:
@@ -61,6 +61,7 @@ def insert_values_in_table_orders():
         conn.close()
 
 
-insert_values_in_table_customers()
-insert_values_in_table_employees()
-insert_values_in_table_orders()
+if __name__ == '__main__':
+    insert_values_in_table_customers()
+    insert_values_in_table_employees()
+    insert_values_in_table_orders()
